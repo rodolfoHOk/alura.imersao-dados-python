@@ -14,10 +14,11 @@ Nesta aula, você vai:
 
 ### Link do projeto
 
-[código](/src/aula-01/aula-01.py)
+[código da aula](/src/aula-01/aula-01.py)
 
 ## Python venv
 
 - criar ambiente virtual: python3 -m venv .venv
 - ativar ambiente virtual: source .venv/bin/activate
 - desativar ambiente virtual: deactivate
+- instalar biblioteca pandas: pip install pandas
