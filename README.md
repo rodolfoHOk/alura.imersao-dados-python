@@ -12,13 +12,25 @@ Nesta aula, você vai:
 - Utilizar a biblioteca Pandas para leitura e visualização inicial de dados.
 - Manipular dados reais com os principais comandos de análise.
 
-### Link do projeto
-
 [código da aula](/src/aula-01/aula-01.py)
 
-## Python venv
+## Aula 2 - Aprenda a Limpar e Preparar os Dados
+
+Nesta aula, você vai aprender a tratar dados de forma mais estruturada, preparando a base para análises mais assertivas. O foco está em identificar e lidar com dados faltantes, organizar colunas, aplicar filtros e gerar estatísticas descritivas que ajudam a entender melhor os dados e extrair insights relevantes.
+Nesta aula, você vai:
+
+- Aprender técnicas para renomear colunas de maneira clara e organizada.
+- Identificar e tratar dados faltantes em bases reais.
+- Aplicar filtros simples para selecionar informações relevantes.
+- Gerar estatísticas descritivas que apoiam a análise e tomada de decisão.
+
+[código da aula](/src/aula-02/aula-02.py)
+
+## Python venv (ambiente virtual)
 
 - criar ambiente virtual: python3 -m venv .venv
 - ativar ambiente virtual: source .venv/bin/activate
 - desativar ambiente virtual: deactivate
 - instalar biblioteca pandas: pip install pandas
+- criar arquivo de dependências: pip freeze > requirements.txt
+- instalar dependências em outra venv: pip install -r requirements.txt
