@@ -42,6 +42,8 @@ Nesta aula, você vai:
 
 - Gráfico de Salário x País para o cargo de Cientista de dados
 
+[código do desafio](/src/aula-03/desafio-aula-03.py)
+
 ## Python venv (ambiente virtual)
 
 - criar ambiente virtual: python3 -m venv .venv
