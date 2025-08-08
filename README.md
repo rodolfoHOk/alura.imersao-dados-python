@@ -26,6 +26,22 @@ Nesta aula, você vai:
 
 [código da aula](/src/aula-02/aula-02.py)
 
+## Aula 3 - Crie Gráficos e conte histórias com Dados
+
+Nesta aula, você vai aprender a criar gráficos para visualizar e explorar informações presentes nos dados. Vamos explorar diferentes tipos de gráficos estatísticos como: histogramas, boxplots e gráficos de barras. Esse passo é importante para identificar padrões, facilitar a interpretação e comunicar os resultados de forma mais clara.
+Nesta aula, você vai:
+
+- Criar gráficos estatísticos para analisar os dados de forma visual.
+- Construir histogramas para observar a distribuição das informações.
+- Utilizar bibliotecas de Python que ajudam na criação de gráficos.
+- Praticar a visualização de dados para apoiar a análise e tomada de decisões.
+
+[código da aula](/src/aula-03/aula-03.py)
+
+### Desafio
+
+- Gráfico de Salário x País para o cargo de Cientista de dados
+
 ## Python venv (ambiente virtual)
 
 - criar ambiente virtual: python3 -m venv .venv
