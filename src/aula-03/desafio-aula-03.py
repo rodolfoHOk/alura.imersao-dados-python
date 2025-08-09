@@ -1,5 +1,6 @@
 import pandas as pd
 import plotly.express as px
+import pycountry
 
 data_url = 'https://raw.githubusercontent.com/guilhermeonrails/data-jobs/refs/heads/main/salaries.csv'
 
@@ -54,21 +55,41 @@ df_limpo = df.dropna()
 
 df_limpo = df_limpo.assign(ano = df_limpo['ano'].astype('int64'))
 
+def iso2_to_iso3(code):
+  try:
+    return pycountry.countries.get(alpha_2=code).alpha_3
+  except:
+    return None
+  
+df_limpo['residencia_iso3'] = df_limpo['residencia'].apply(iso2_to_iso3)
+
+df_limpo.to_csv('dados-imersao-final.csv', index=False)
+
+# print(df_limpo.head())
+
 cientista_dados = 'Data Scientist'
 df_cientista_dados = df_limpo[df_limpo['cargo'] == cientista_dados]
 
 # print(df_cientista_dados.head())
 
-media_salario_cientista_dados_por_pais = df_cientista_dados.groupby('residencia')['usd'].mean()
+media_salario_cientista_dados_por_pais = df_cientista_dados.groupby('residencia_iso3')['usd'].mean()
 
 # print(media_salario_cientista_dados_por_pais)
 
-media_salario_cientista_dados_por_pais_ordem = media_salario_cientista_dados_por_pais.sort_values(ascending=True)
+# media_salario_cientista_dados_por_pais_ordem = media_salario_cientista_dados_por_pais.sort_values(ascending=True)
 
-fig = px.bar(media_salario_cientista_dados_por_pais_ordem.reset_index(),
-             x='usd',
-             y='residencia',
-             orientation='h',
-             title='Média salarial de Cientista de dados por país (USD)',
-             labels={'residencia': 'País', 'usd': 'Salário Médio (USD)'})
+# fig = px.bar(media_salario_cientista_dados_por_pais_ordem.reset_index(),
+#              x='usd',
+#              y='residencia',
+#              orientation='h',
+#              title='Média salarial de Cientista de dados por país (USD)',
+#              labels={'residencia': 'País', 'usd': 'Salário Médio (USD)'})
+# fig.show()
+
+fig = px.choropleth(media_salario_cientista_dados_por_pais.reset_index(),
+                    locations='residencia_iso3',
+                    color='usd',
+                    color_continuous_scale='rdylgn',
+                    title='Salário médio de Cientista de Dados por país',
+                    labels={'usd': 'Salário médio (USD)', 'residencia_iso3': 'País'})
 fig.show()
