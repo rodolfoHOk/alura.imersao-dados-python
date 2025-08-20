@@ -75,3 +75,7 @@ Nesta aula, você vai:
 ## Links úteis
 
 [Streamlit website](https://streamlit.io/)
+
+## Certificado
+
+[certificado pdf](https://github.com/rodolfoHOk/portfolio-img/blob/main/docs/certificado-imersao-dados-python.pdf)
